@@ -1,7 +1,7 @@
 package ComplexOperator;
 
 object FunctionLiteralsAndPlaceHolders extends App {
-  val readFromFileCar = () =>  {
+  val readFromFileCar = () => {
     val source = io.Source.fromFile("C:\\Users\\HP\\IdeaProjects\\Scala\\src\\main\\scala\\car..txt")
     for {
       line <- source.getLines().drop(1).toVector
@@ -11,7 +11,7 @@ object FunctionLiteralsAndPlaceHolders extends App {
     yield {
       if (cols.length == 10) {
         //        println(cols.toVector)
-        StockRecord(
+        Records(
           cols(0),
           cols(1).toFloat,
           cols(2),
@@ -24,7 +24,7 @@ object FunctionLiteralsAndPlaceHolders extends App {
           cols(9)
         )
       } else {
-        StockRecord(
+        Records(
           cols(0),
           cols(1).toFloat,
           cols(2),
@@ -48,31 +48,24 @@ object FunctionLiteralsAndPlaceHolders extends App {
   data.foreach(data => println(data))
 
 
-    var getAvgPriceValue = () => data.map(i => i.price).sum / data.size
+  var getAvgPriceValue = () => data.map(i => i.price).sum / data.size
 
-    val getMinPriceValue = () => data.map(_.price).min
+  val getMinPriceValue = () => data.map(_.price).min
 
-    val getMaxPriceValue = () => data.map(_.price).max
+  val getMaxPriceValue = () => data.map(_.price).max
 
-    val getValueOnDate = (givenDate: String) => {
-      val filteredClose = data.filter(_.registration == givenDate)
+  val getValueOnDate = (givenDate: String) => {
+    val filteredClose = data.filter(_.registration == givenDate)
 
-      filteredClose.map(_.price).head
-    }
+    filteredClose.map(_.price).head
+  }
 
-    val date = "2020";
-    println(s"number of rows: ${getTotalNumberOfRows()}")
-    println("average price: " + getTotalNumberOfRows())
-    println("min price: " + getTotalNumberOfRows())
-    println("max price: " + getTotalNumberOfRows())
- //   var priceDelta=(_:Double)-(_:Double)
-//
-//    val getDailyDelta=(openPrice:Double,closePrice:Double,
-//                      delta:(Double,Double)=>Double)=>delta(openPrice,closePrice)
-//    //val price=StockRecord(data.filter(._pri==))
-//    print(getDailyDelta(1.1,3.2,priceDelta))
-
-
-
-
+  val date = "2020";
+  println(s"number of rows: ${getTotalNumberOfRows()}")
+  println("average price: " + getTotalNumberOfRows())
+  println("min price: " + getTotalNumberOfRows())
+  println("max price: " + getTotalNumberOfRows())
 }
+
+
+

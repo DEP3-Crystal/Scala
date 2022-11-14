@@ -1,6 +1,6 @@
 package ComplexOperator
 
-case class StockRecord(
+case class Records(
                         car :String,
                         price: Float,
                         body: String,
